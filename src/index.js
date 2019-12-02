@@ -2,6 +2,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { LocaleProvider, Icon } from 'antd'
+import BasicLayout from '@ant-design/pro-layout'
 import zhCN from 'antd/lib/locale-provider/zh_CN'
 import { Provider } from 'react-redux'
 import { ConnectedRouter } from 'connected-react-router'
@@ -13,11 +14,8 @@ import * as serviceWorker from './serviceWorker'
 import configureStore from './global/configStore'
 import * as urls from './global/routepath'
 import routes from './global/routes'
+import { getMenuData } from './global/menu'
 import RightContent from './components/RightContent'
-
-import Login from './pages/login'
-import BasicLayout, {PageHeaderWrapper} from '@ant-design/pro-layout';
-import {getMenuData} from "./global/menu";
 
 const history = createBrowserHistory()
 const store = configureStore({}, history)
@@ -56,11 +54,7 @@ render(
           {routes.map((route, index) => {
             if (route.componentLayout === 'UserLayout') {
               return (
-                <Route
-                  key='login'
-                  path={urls.LOGIN}
-                  component={Login}
-                />
+                <Route key={index} path={route.path} exact={route.exact} component={route.component} />
               )
             } else {
               return (
