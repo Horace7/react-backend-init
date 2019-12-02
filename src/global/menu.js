@@ -3,13 +3,13 @@ const menuData = [
   {
     path: '/',
     name: '首页',
-    icon: 'smile',
+    icon: 'home',
     exact: false,
   },
   {
     path: urls.LIST,
     name: '列表页',
-    icon: 'smile',
+    icon: 'unordered-list',
     exact: false
   }
 ]

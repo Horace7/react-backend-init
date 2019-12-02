@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React from 'react'
 import { render } from 'react-dom'
-import { LocaleProvider } from 'antd'
+import { LocaleProvider, Icon } from 'antd'
 import zhCN from 'antd/lib/locale-provider/zh_CN'
 import { Provider } from 'react-redux'
 import { ConnectedRouter } from 'connected-react-router'
@@ -35,10 +35,10 @@ const verifyUser = (route, index) => {
             ...routers,
           ];
         }}
-        rightContentRender={rightProps => <RightContent style={{float: 'right'}} {...rightProps} />}
+        rightContentRender={rightProps => <RightContent {...rightProps} />}
         menuDataRender={() => getMenuData()}
         menuItemRender={(menuItemProps, defaultDom) => {
-          return <Link to={menuItemProps.path}>{defaultDom}</Link>
+          return <Link to={menuItemProps.path}><Icon type={ menuItemProps.icon } />{defaultDom}</Link>
         }}
       >
         <Route key={index} path={route.path} exact={route.exact} component={route.component} />
