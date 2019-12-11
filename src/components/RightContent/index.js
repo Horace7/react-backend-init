@@ -19,10 +19,10 @@ class GlobalHeaderRight extends Component {
           className={`action search`}
           placeholder={'input'}
           onSearch={value => {
-            console.log('input', value) // tslint:disable-line no-console
+            console.log('input', value)
           }}
           onPressEnter={value => {
-            console.log('enter', value) // tslint:disable-line no-console
+            console.log('enter', value)
           }}
         />
         <Avatar icon='user' style={{ marginRight: 30 }} />

@@ -2,11 +2,11 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { LocaleProvider, Icon } from 'antd'
-import BasicLayout from '@ant-design/pro-layout'
+import BasicLayout, { DefaultFooter } from '@ant-design/pro-layout'
 import zhCN from 'antd/lib/locale-provider/zh_CN'
 import { Provider } from 'react-redux'
 import { ConnectedRouter } from 'connected-react-router'
-import { Route, Switch, Redirect, Link } from 'react-router-dom'
+import { Route, Redirect, Link } from 'react-router-dom'
 import { createBrowserHistory } from 'history'
 
 import './index.css'
@@ -28,6 +28,15 @@ const verifyUser = (route, index) => {
       <BasicLayout
         title={'React-Web-Back'}
         navTheme='light'
+        footerRender={() => (
+          <DefaultFooter
+            links={[
+              // { key: 'test', title: '左边1', href: 'www.alipay.com' },
+              // { key: 'test2', title: '右边2', href: 'www.alipay.com' },
+            ]}
+            copyright="2019-2022"
+          />
+        )}
         breadcrumbRender={(routers = []) => {
           return [
             ...routers,
@@ -51,17 +60,9 @@ render(
   <LocaleProvider locale={zhCN}>
       <Provider store={store}>
         <ConnectedRouter history={history}>
-          {routes.map((route, index) => {
-            if (route.componentLayout === 'UserLayout') {
-              return (
-                <Route key={index} path={route.path} exact={route.exact} component={route.component} />
-              )
-            } else {
-              return (
-                <Route key={index} path={route.path} exact={route.exact} component={() => verifyUser(route)} />
-              )
-            }
-          })}
+          {routes.map((route, index) => (
+            <Route key={index} path={route.path} exact={route.exact} component={route.componentLayout === 'UserLayout' ? route.component : () => verifyUser(route)} />
+          ))}
         </ConnectedRouter>
       </Provider>
   </LocaleProvider>,
