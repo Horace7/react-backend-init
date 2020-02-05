@@ -26,7 +26,7 @@ const verifyUser = (route, index) => {
   if (user && user.accessToken) {
     return (
       <BasicLayout
-        title={'用户管理系统'}
+        title={'react-backend'}
         navTheme='light'
         // 页脚
         // footerRender={() => (
