@@ -1,7 +1,7 @@
 // import { Redirect } from 'react-router-dom'
 import * as urls from './routepath'
 import Home from '../pages/home'
-import List from '../pages/list'
+import List from '../pages/list/index.tsx'
 import Login from '../pages/login'
 
 const routes = [

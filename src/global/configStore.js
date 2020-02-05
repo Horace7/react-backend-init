@@ -7,7 +7,7 @@ import promiseMiddleware from 'redux-promise'
 
 import rootReducer from './reducer'
 
-export default function configureStore(initialState, history, onComplete: ?() => void) {
+export default function configureStore(initialState, history, onComplete) {
   let finalCreateStore
   let devEnhancer
 

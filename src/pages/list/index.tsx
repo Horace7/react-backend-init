@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 class List extends Component {
-  constructor(props) {
+  constructor(props:any) {
     super(props)
     this.state = {
     }
@@ -17,7 +17,7 @@ class List extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state:any) => {
   return {
     userInfo: state.userLogin
   }

@@ -26,17 +26,15 @@ const verifyUser = (route, index) => {
   if (user && user.accessToken) {
     return (
       <BasicLayout
-        title={'React-Web-Back'}
+        title={'用户管理系统'}
         navTheme='light'
-        footerRender={() => (
-          <DefaultFooter
-            links={[
-              // { key: 'test', title: '左边1', href: 'www.alipay.com' },
-              // { key: 'test2', title: '右边2', href: 'www.alipay.com' },
-            ]}
-            copyright="2019-2022"
-          />
-        )}
+        // 页脚
+        // footerRender={() => (
+        //   <DefaultFooter
+        //     links={[]}
+        //     copyright="2019-2022"
+        //   />
+        // )}
         breadcrumbRender={(routers = []) => {
           return [
             ...routers,

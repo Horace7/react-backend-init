@@ -4,6 +4,11 @@
   "private": true,
   "dependencies": {
     "@ant-design/pro-layout": "^4.9.0-2",
+    "@types/jest": "^24.9.0",
+    "@types/node": "^13.1.7",
+    "@types/react": "^16.9.17",
+    "@types/react-dom": "^16.9.4",
+    "@types/react-redux": "^7.1.6",
     "antd": "^3.25.3",
     "babel": "^6.23.0",
     "babel-plugin-import": "^1.13.0",
@@ -24,7 +29,8 @@
     "react-scripts": "3.2.0",
     "redux": "^4.0.4",
     "redux-promise": "^0.6.0",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "typescript": "^3.7.4"
   },
   "scripts": {
     "start": "react-app-rewired start",

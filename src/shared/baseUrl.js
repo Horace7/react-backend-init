@@ -1,5 +1,5 @@
 /* eslint-disable */
-let base
+let baseUrl
 const hosts = {
   dev: 'https://qa-fams-api.helixtec.cn',
   test: 'https://qa-fams-api.helixtec.cn',
@@ -7,11 +7,11 @@ const hosts = {
 }
 if (process.env.NODE_ENV === 'production') {
   if (process.env.VUE_APP_FLAG === 'prod') {
-    base = hosts.prod
+    baseUrl = hosts.prod
   } else {
-    base = hosts.test
+    baseUrl = hosts.test
   }
 } else {
-  base = hosts.dev
+  baseUrl = hosts.dev
 }
-export { base }
+export { baseUrl }
